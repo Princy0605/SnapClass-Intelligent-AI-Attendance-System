@@ -253,6 +253,10 @@ def teacher_tab_attendance_records():
 
 
 def login_teacher(username,password):
+
+    username=username.strip()
+    password=password.strip()
+
     if not username or not password:
         return False
     teacher=teacher_login(username,password)
@@ -314,6 +318,12 @@ def teacher_screen_login():
 
 
 def register_teacher(teacher_username,teacher_name,teacher_pass,teacher_pass_confirm):
+
+    teacher_username=teacher_username.strip()
+    teacher_name=teacher_name.strip()
+    teacher_pass=teacher_pass.strip()
+    teacher_pass_confirm=teacher_pass_confirm.strip()
+
     if not teacher_username or not teacher_name or not teacher_pass:
         return False,"All fields are required!"
     if check_teacher_exists(teacher_username):
