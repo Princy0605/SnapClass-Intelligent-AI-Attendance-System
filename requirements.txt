@@ -10,6 +10,11 @@ scikit-learn
 
 # dlib-19.24.1-cp311-cp311-win_amd64.whl
 
+
+#This dlib bin is used only for deployment on steamlit
+#For local device use the above wheel
+
+
 dlib-bin==20.0.0
 
 
