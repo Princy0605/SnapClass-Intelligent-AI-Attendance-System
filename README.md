@@ -97,6 +97,10 @@ Securely stores:
 
 - bcrypt
 
+## Deployment
+
+- Streamlit
+
 ---
 
 # 📷 How It Works
