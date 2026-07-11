@@ -4,6 +4,13 @@ An AI-powered attendance management system that automates student attendance usi
 
 ---
 
+# 🌐 Live Demo
+
+🚀 Try SnapClass here:
+https://snapclass-intelligent-ai-attendance.streamlit.app/
+
+
+
 # 🚀 Features
 
 ## 👨‍🏫 Teacher Authentication
@@ -96,6 +103,10 @@ Securely stores:
 ## Security
 
 - bcrypt
+
+## Deployment
+
+- Streamlit
 
 ---
 
