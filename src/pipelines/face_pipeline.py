@@ -62,7 +62,8 @@ def get_trained_model():
     try:
         clf.fit(X,y)
     except ValueError:
-        pass
+        # pass
+        return None
     
     return {'clf':clf,'X':X,'y':y}
 

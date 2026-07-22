@@ -32,7 +32,12 @@ def voice_attendance_dialog(selected_subject_id):
                 st.error('No enrolled students have voice profiles registered')
                 return
 
-            audio_bytes=audio_data.read()
+            if audio_data is None:
+                st.warning("Please record audio first.")
+                return
+
+            # audio_bytes=audio_data.read()
+            audio_bytes = audio_data.getvalue()
 
             detected_scores=process_bulk_audio(audio_bytes,candidates_dict)
 
@@ -42,7 +47,7 @@ def voice_attendance_dialog(selected_subject_id):
 
             for node in enrolled_students:
                 student=node['students']
-                score:detected_scores.get(student['student_id'],0.0)
+                score=detected_scores.get(student['student_id'],0.0)
                 is_present=bool(score>0)
 
                 results.append({
@@ -58,7 +63,11 @@ def voice_attendance_dialog(selected_subject_id):
                     'timestamp':current_timestamp,
                     'is_present':bool(is_present)
                 })
-            st.session_state.voice_attendance_results(pd.DataFrame(results),attendance_to_log)
+            st.session_state.voice_attendance_results=(
+                pd.DataFrame(results),
+                attendance_to_log
+            )
+            st.rerun()
     
     if st.session_state.get('voice_attendance_results'):
         st.divider()
