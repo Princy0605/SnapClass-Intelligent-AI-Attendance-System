@@ -9,7 +9,8 @@ An AI-powered attendance management system that automates student attendance usi
 🚀 Try SnapClass here:
 https://snapclass-intelligent-ai-attendance.streamlit.app/
 
-
+🛬 SnapClass Landing Page:
+snap-class-landing-page-ndyxxh3sx-princy-jain.vercel.app
 
 # 🚀 Features
 
